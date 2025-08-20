@@ -9,7 +9,7 @@ workflows:
         BUNDLE_ID: com.nalber.helperpost         # your bundle id
         APP_STORE_APP_ID: 6749892126      # App's Apple ID from App Store Connect > App Info
     integrations:
-      app_store_connect: Helper_Post
+      app_store_connect: codemagic API Keys
     scripts:
       - name: Flutter pub get
         script: flutter pub get
