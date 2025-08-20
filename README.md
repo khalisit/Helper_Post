@@ -1,1 +1,3 @@
-echo "# Helper_Post" >> README.md
+# helperpost
+
+A new Flutter project.

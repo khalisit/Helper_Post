@@ -1,0 +1,68 @@
+name: helperpost
+description: "System Management"
+publish_to: 'none'
+version: 1.0.8+9
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  connectivity_plus: ^6.1.4
+  file_picker: ^10.2.0
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+  font_awesome_flutter: ^10.8.0
+  google_fonts: ^6.2.1
+  http: ^1.4.0
+  iconsax_flutter: ^1.0.1
+  image_picker: ^1.1.2
+  mobile_scanner: ^7.0.1
+  onesignal_flutter: ^5.3.4
+  path: ^1.9.1
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  provider: ^6.1.5
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.5.3
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# dart run flutter_launcher_icons 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 
+  web:
+    generate: true
+    image_path: "path/to/image.png"
+    background_color: "#f2f3f6"
+    theme_color: "#f2f3f6"
+  windows:
+    generate: true
+    image_path: "path/to/image.png"
+    icon_size: 48 
+  macos:
+    generate: true
+    image_path: "path/to/image.png"
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: rudaw
+      fonts:
+        - asset: assets/font/rudaw.ttf
+    - family: rudawb
+      fonts:
+        - asset: assets/font/rudawbold.ttf
+
+  assets:
+    - assets/ui/
+    - assets/icon/
+
