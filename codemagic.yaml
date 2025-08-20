@@ -2,14 +2,14 @@ workflows:
   ios_appstore:
     name: iOS • App Store (Flutter)
     environment:
-      flutter: 3.35.0        # or "stable"
-      xcode: latest          # use latest Xcode on Codemagic
+      flutter: 3.35.0
+      xcode: latest
       cocoapods: default
       vars:
-        BUNDLE_ID: com.nalber.helperpost         # your bundle id
-        APP_STORE_APP_ID: 6749892126      # App's Apple ID from App Store Connect > App Info
+        BUNDLE_ID: com.nalber.helperpost
+        APP_STORE_APP_ID: 6749892126
     integrations:
-      app_store_connect: codemagic-key
+      app_store_connect: codemagic-key   # must match the alias in Codemagic
     scripts:
       - name: Flutter pub get
         script: flutter pub get
@@ -23,7 +23,6 @@ workflows:
 
       - name: Bump iOS build number from TestFlight
         script: |
-          # If no build yet, default to 0
           LATEST=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APP_ID" || echo 0)
           export BUILD_NUMBER=$(($LATEST + 1))
           cd ios
@@ -41,6 +40,6 @@ workflows:
 
     publishing:
       app_store_connect:
-        use_integration: true
+        use_integration: true           # <--- THIS fixes the authentication error
         submit_to_testflight: true
         submit_to_app_store: true
